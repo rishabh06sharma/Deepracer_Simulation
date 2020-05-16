@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-# license removed for brevity
-
 from __future__ import print_function
 import rospy
 import time
@@ -22,8 +20,6 @@ SIMULATION_WORKER = "SIMULATION_WORKER"
 SAGEMAKER_TRAINING_WORKER = "SAGEMAKER_TRAINING_WORKER"
 
 node_type = os.environ.get("NODE_TYPE", SIMULATION_WORKER)
-
-
 
 moveBindings = {
 	'r':(-1,0,0,-1),
@@ -54,11 +50,6 @@ def callback(data):
 
 def main():
     global flg,record
-    # In ROS, nodes are uniquely named. If two nodes with the same
-    # name are launched, the previous one is kicked off. The
-    # anonymous=True flag means that rospy will choose a unique
-    # name for our 'listener' node so that multiple listeners can
-    # run simultaneously.
     
     rospy.init_node('listener', anonymous=True)
     while(1):
@@ -73,12 +64,6 @@ def main():
 		    #print('done')
 
 	    rospy.Subscriber("/progress", Progress, callback)
-
-
-
-
-    # spin() simply keeps python from exiting until this node is stopped
-    #rospy.spin()
 
 if __name__ == '__main__':
     
