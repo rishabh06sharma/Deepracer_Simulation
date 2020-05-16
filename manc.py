@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import rospy
 import time
 import rosbag
@@ -97,25 +96,7 @@ k=0
 def callback_image(data):
 	global k,xx
 	image = Image.frombytes('RGB', (data.width, data.height),data.data,'raw', 'BGR', 0, 1)
-	img=np.array(image)
-	#if k in [5,10,15,20,25]:
-	#	np.savez_compressed('temp_{0}'.format(k),a=img)
-		#img=color.rgb2gray(img)
-		#io.imshow(img, cmap=plt.cm.gray)
-	
-		#print(np.shape(img))
-        	#plt.show()
-		#time.sleep(2)
-	#k=k+1
-	#img=color.rgb2gray(img)
-	#print(img.sum())
-	#plt.pause(0.01)
-	#print(img.sum())
-	#key=getKey()
-	#if (moveBindings[key][3]==1 and moveBindings[key][0]==1):
-	#	xx=1
-		
-	
+	img=np.array(image)		
 	with session.as_default():
             with session.graph.as_default():	
 	        keras.backend.set_session(session)
@@ -146,39 +127,19 @@ def run():
 		ct=5
 		print(ack_msg.drive.steering_angle)
 		if moveBindings[key][0]==1:
-#				ack_publisher.drive.speed.publish(5)
-#			if ack_msg.drive.steering_angle>0.5:
-#				ack_msg.drive.speed=ack_msg.drive.speed
-#			else:	 
-#				ack_msg.drive.speed =ack_msg.drive.speed+0.08
 			ack_msg.drive.speed = 0.5
-#				pub_vel_left_rear_wheel.publish(5)
-#				pub_vel_right_rear_wheel.publish(5)
-#				pub_vel_left_front_wheel.publish(5)
-#				pub_vel_right_front_wheel.publish(5)
 		if moveBindings[key][3]==1:
 			if ack_msg.drive.steering_angle>0.64:
 				ack_msg.drive.steering_angle=ack_msg.drive.steering_angle
 			else:	 
 				ack_msg.drive.steering_angle =ack_msg.drive.steering_angle+0.08
-#				ack_publisher.drive.steering_angle.publish(-1)
-#				pub_pos_left_steering_hinge.publish(0.3)
-#				pub_pos_right_steering_hinge.publish(0.3)
 		if moveBindings[key][3]==-1:
 			if ack_msg.drive.steering_angle<-0.64:
 				ack_msg.drive.steering_angle=ack_msg.drive.steering_angle
-			else:
-#				ack_publisher.header.stamp = rospy.Time.now()
-#				ack_publisher.drive.steering_angle.publish(1)		 
+			else:		 
 				ack_msg.drive.steering_angle =ack_msg.drive.steering_angle-0.08
-#				pub_pos_left_steering_hinge.publish(-0.3)
-#				pub_pos_right_steering_hinge.publish(-0.3)
 		
 		if moveBindings[key][3]==-1 and moveBindings[key][0]==-1:
-#			if ack_msg.drive.steering_angle<=0:
-#				ack_msg.drive.speed=ack_msg.drive.speed
-#			else:	 
-#				ack_msg.drive.speed =ack_msg.drive.speed-0.08
 
 			ack_msg.drive.speed = 0
 		
