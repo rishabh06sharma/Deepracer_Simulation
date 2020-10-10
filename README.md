@@ -62,7 +62,7 @@ def getKey():
 This data is further collected by running ROSbag command in seprate terminal simultaneously. To run car uing keyboard or to deploy the model run main.py in seprate terminal.
 
 #### Files Description
-main.py: Keyboard and Computer interface
-main.py: model deployment
-extract_bag.py: data extraction
-distace_from_centre.py: Analyse
+main.py: Keyboard and Computer interface <br />
+main.py: model deployment <br />
+extract_bag.py: data extraction <br />
+distace_from_centre.py: Analyse <br />
