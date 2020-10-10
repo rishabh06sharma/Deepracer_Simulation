@@ -3,7 +3,9 @@ In this project I utilised [aws-robomaker-sample-application-deepracer](https://
 
 #### Tasks performed: <br />
 * Data Collection (Playing car using keyboard manually)
-* Data Extraction (Image and corresponding Labels)
+* Data Extraction (Image and corresponding Labels from collected data)
 * Train
 * Deploy
+
+
 
