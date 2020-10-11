@@ -64,5 +64,6 @@ This data is further collected by running ROSbag command in seprate terminal sim
 #### Files Description
 main.py: Keyboard and Computer interface <br />
 main.py: model deployment <br />
+train.ipynb: train model <br />
 extract_bag.py: data extraction <br />
 distace_from_centre.py: Analyse <br />
