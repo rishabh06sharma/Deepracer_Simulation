@@ -36,7 +36,7 @@ roslaunch deepracer_simulation racetrack_with_racecar.launch world_name:=easy_tr
 This repository only deals with lateral control of vehicle Using DNN. <br />
 
 #### NN model Details:  <br />
-[NVIDIA Research paper](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf)
+[NVIDIA Research paper](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) <br />
 <img src="https://github.com/rs278/Deepracer_Simulation/blob/master/Docs/model.png" width="450" height="580">
 
 To collect data while running the car we used keyboard to give acceleration and steerign commands. We utilised the following function and static movebindings to do so.
